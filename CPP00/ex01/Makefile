@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
+#    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 10:23:34 by jedusser          #+#    #+#              #
-#    Updated: 2025/02/17 09:34:59 by jedusser         ###   ########.fr        #
+#    Updated: 2025/02/17 15:47:58 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 
 SRC_DIR = .
 OBJ_DIR = obj
@@ -21,23 +21,16 @@ NAME = phonebook
 SRCS = main.cpp \
        Contact.cpp \
        PhoneBook.cpp \
-	Contact.setters.cpp	\
-	Contact.getters.cpp \
-	parsing_utils.cpp
+       Contact.setters.cpp \
+       Contact.getters.cpp \
+       parsing_utils.cpp
 
-
-OBJS = $(OBJ_DIR)/main.o \
-       $(OBJ_DIR)/Contact.o \
-       $(OBJ_DIR)/PhoneBook.o \
-       $(OBJ_DIR)/Contact.setters.o \
-       $(OBJ_DIR)/Contact.getters.o \
-	   	$(OBJ_DIR)/parsing_utils.o
-
-
+OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
+DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) Makefile
+$(NAME): $(OBJS)
 	@echo "Building $(NAME)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
@@ -53,5 +46,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re
