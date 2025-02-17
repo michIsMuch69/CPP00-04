@@ -30,7 +30,7 @@ DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) Makefile
 	@echo "Building $(NAME)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
