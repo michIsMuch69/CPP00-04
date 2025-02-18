@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
+#    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 10:23:34 by jedusser          #+#    #+#              #
-#    Updated: 2025/02/17 15:47:58 by michismuch       ###   ########.fr        #
+#    Updated: 2025/02/18 13:10:10 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) Makefile
+$(NAME): $(OBJS)
 	@echo "Building $(NAME)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 

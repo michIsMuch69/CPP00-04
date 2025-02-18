@@ -6,35 +6,40 @@
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 10:59:25 by jedusser          #+#    #+#              #
-#    Updated: 2024/10/28 10:59:59 by jedusser         ###   ########.fr        #
+#    Updated: 2025/02/18 13:34:44 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 
-SRCS = main.cpp
-OBJS = main.o
+SRC_DIR = .
+OBJ_DIR = obj
 
 NAME = hibrain
+SRCS = megaphone.cpp
+OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
+DEPS = $(OBJS:.o=.d)
 
-all : $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Building $(NAME)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	
-$(OBJS): $(SRCS)
-	@echo "compiling $< to $@"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@echo "Compiling $< to $@"
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+clean:
+	rm -rf $(OBJ_DIR)
 
-clean: 
-	rm -rf $(OBJS)
-
-fclean:	clean
+fclean: clean
 	rm -f $(NAME)
-	
+
 re: fclean all
 
-.PHONY: all clean fclean re
+-include $(DEPS)
+
+.PHONY: all clean fclean re%   

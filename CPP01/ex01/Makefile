@@ -6,12 +6,12 @@
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 10:17:20 by jedusser          #+#    #+#              #
-#    Updated: 2024/10/28 10:26:32 by jedusser         ###   ########.fr        #
+#    Updated: 2025/02/18 15:10:55 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 
 SRC_DIR = .
 OBJ_DIR = obj
@@ -22,14 +22,12 @@ SRCS = main.cpp \
        Zombie.cpp \
 	   zombieHorde.cpp \
 
-
-OBJS = $(OBJ_DIR)/main.o \
-		$(OBJ_DIR)/Zombie.o \
-		$(OBJ_DIR)/zombieHorde.o \
+OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
+DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS)
 	@echo "Building $(NAME)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
@@ -46,4 +44,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+-include $(DEPS)
+
+.PHONY: all clean fclean re%        

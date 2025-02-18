@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/25 08:03:20 by jedusser          #+#    #+#              #
-#    Updated: 2025/02/18 13:35:51 by jedusser         ###   ########.fr        #
+#    Created: 2025/02/18 13:49:17 by jedusser          #+#    #+#              #
+#    Updated: 2025/02/18 15:15:28 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 SRC_DIR = .
 OBJ_DIR = obj
 
-NAME = zombie
+NAME = unneccessaryViolence
 
-SRCS = main.cpp \
-       Zombie.cpp \
-	   newZombie.cpp \
-	   randomChump.cpp
-
+SRCS = Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
+		main.cpp 
+		
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 
@@ -47,5 +47,4 @@ re: fclean all
 
 -include $(DEPS)
 
-.PHONY: all clean fclean re%
-
+.PHONY: all clean fclean re%   
