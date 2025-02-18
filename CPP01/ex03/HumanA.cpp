@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:14:03 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/18 15:36:02 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:53:52 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 #include <string>
 #include <iostream>
 
-HumanA::HumanA(const std::string &name, const Weapon &weapon) :  _weapon(weapon),  _name(name)
+HumanA::HumanA(const std::string &name, Weapon &weapon) :  _weapon(weapon),  _name(name)
 {
     std::cout << "Init list constructor for HumanA called" << std::endl;
     return ;
 }
-// HumanA::HumanA(/* args */)
-// {
-//     return ;
-// }
 
 HumanA::~HumanA()
 {
@@ -31,6 +27,6 @@ HumanA::~HumanA()
 
 void HumanA::attack() const
 {
-    std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;//
+    std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
     //HOW to pass and print weapont
 }
