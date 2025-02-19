@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:02:56 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/18 16:48:49 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/02/19 08:45:49 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include <iostream>
-Weapon::Weapon(/* args */)
-{
-    return ;
-}
 
 Weapon::Weapon(const std::string &type): _type(type)
 {
@@ -34,6 +30,5 @@ const std::string Weapon::getType() const
 
 void Weapon::setType(const std::string &type)
 {
-    std::cout <<  " type in settype == " << type << std::endl;
     this->_type = type;
 }

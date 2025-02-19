@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:13:04 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/18 17:17:51 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/02/19 08:47:51 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main()
         HumanA bob("Bob", club);
         bob.attack();
         club.setType("some other type of club");
-        std::cout << " in main == " <<   club.getType() << std::endl;
         bob.attack();
     }
     {
