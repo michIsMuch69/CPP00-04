@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 09:17:31 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/20 10:05:44 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/02/20 10:42:35 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void replace_line_occurences(std::string &string, const std::string &to_replace,
         std::cout <<  "pos = " << pos << std::endl;
         start = string.find(to_replace, pos);
 
-        end = start + (to_replace.length() -1);
+        end = start + (to_replace.length() - 1);
         if (start == string.npos)
             break;
         string.erase(start, (end - start) + 1);
@@ -39,7 +39,7 @@ void replace_line_occurences(std::string &string, const std::string &to_replace,
         if (end < string.length())
             pos = end + 1;
     }
-    
+    std::cout << "string in function ==  " << string << std::endl;
 }
 
 int	main(int argc, char **argv)
@@ -54,51 +54,23 @@ int	main(int argc, char **argv)
 
 
     std::ifstream src_file;    
-    std::fstream dest_file("original.replace");
-    
+    std::ofstream dest_file("original.replace");
     std::string src_line;
     
+    
     src_file.open(user_entry.c_str(), std::ifstream::in);
+
+    
     std::cout << "======IN original.txt======" << std::endl;
     while(std::getline(src_file, src_line))
     {
         std::cout << "\033[1;34m" << src_line << "\033[0m" << std::endl;
-        replace_line_occurences(src_line, "loup", "agneau");
+        replace_line_occurences(src_line, "loup", "coso");
+        std::cout << "srcline in main " << src_line << std::endl;
         dest_file << src_line << std::endl;        
     }
     src_file.close();
     dest_file.close();
 
-    
-    
-    
-    std::string dest_line;
-    dest_file.open("original.replace");
-    std::cout << "\n======IN original.replace======" << std::endl;
-    while(std::getline(dest_file, dest_line))
-    {
-        std::cout << dest_line << std::endl;
-    }
-    dest_file.close();
-    
-
-
-    //ifstream for input
-    //ofstream for output
-    
-
-    
- 
-    // std::cout << "Enter string to replace : " << std::endl;
-    // std::getline(std::cin, user_entry);
-    // std::cout << "string to replace entered : " << user_entry << std::endl;
-
-    // std::cout << "Enter replacement string : " << std::endl;
-    // std::getline(std::cin, user_entry);
-    // std::cout << "replacement string entered : " << user_entry << std::endl;
-    
-    // remember use of : std::cin.ignore();
-
-	// Catch the stream, replace occurences, and then write in the file.
     return (0);
 }
