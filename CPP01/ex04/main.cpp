@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 09:17:31 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/20 12:31:05 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:30:59 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,7 @@ static std::string parse_file_name(std::string string)
 int	main(int argc, char **argv)
 {
     if (argc!= 4)
-    {
-        std::cerr << "Invalid arguments. Usage : <source file> <occurence to replace> <replacement string>" << std::endl;
-        return 1;
-    }
+        return ((std::cerr << "Invalid arguments. Usage : <source file> <occurence to replace> <replacement string>" << std::endl), 1);
     std::string user_entry = argv[1], 
                 to_replace = argv[2],  
                 new_string = argv[3], 
