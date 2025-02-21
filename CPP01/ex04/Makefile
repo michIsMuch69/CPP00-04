@@ -6,7 +6,7 @@
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 09:19:00 by jedusser          #+#    #+#              #
-#    Updated: 2025/02/19 09:31:37 by jedusser         ###   ########.fr        #
+#    Updated: 2025/02/21 10:39:06 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 SRC_DIR = .
 OBJ_DIR = obj
 
-NAME = sedIsForLosers
+NAME = sed_loser
 
 SRCS = main.cpp \
        
