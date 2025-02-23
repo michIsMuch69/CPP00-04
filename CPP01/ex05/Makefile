@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
+#    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/21 10:04:53 by jedusser          #+#    #+#              #
-#    Updated: 2025/02/21 10:05:10 by jedusser         ###   ########.fr        #
+#    Updated: 2025/02/23 08:40:24 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR = obj
 NAME = harl
 
 SRCS = main.cpp \
-		harl.cpp
+		Harl.cpp
        
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
