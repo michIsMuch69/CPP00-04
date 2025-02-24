@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 09:03:44 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/23 09:28:44 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/02/24 12:29:56 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ void Harl::complain(std::string level)
     int funcIndex;
     
     funcIndex = stringToEnum(level);
+    if(funcIndex == UNKNOWN)
+    {
+		std::cerr << "Unknown command" << std::endl;
+        std::cout << "Valid commands : DEBUG - INFO - WARNING - ERROR" << std::endl;
+        return ;
+    }
     (this->*_funcPtr[funcIndex])();
 }
 
