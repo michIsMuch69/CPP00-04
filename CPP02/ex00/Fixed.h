@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:18:48 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/25 13:28:26 by jedusser         ###   ########.fr       */
+/*   Created: 2025/02/25 11:19:28 by jedusser          #+#    #+#             */
+/*   Updated: 2025/02/25 11:38:07 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_H
+#define FIXED_H
 
+/*
+    - Constructeur par defaut.
+    - Constructeur de copie.
+    - Operateur d'affectation
+    - Destructer
+*/
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
-void randomChump(std::string name)
+class Fixed
 {
-    Zombie zombie(name);
-    zombie.announce();
-}
+    private:
+        int number;
+        static const int rawBits;
+
+        
+    public:
+
+        Fixed();
+        Fixed(const Fixed&);
+        ~Fixed();
+};
+
+
+#endif

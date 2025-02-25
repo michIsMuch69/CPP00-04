@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:18:48 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/25 13:28:26 by jedusser         ###   ########.fr       */
+/*   Created: 2025/02/25 11:19:31 by jedusser          #+#    #+#             */
+/*   Updated: 2025/02/25 11:38:16 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-
-#include "Zombie.hpp"
-
-void randomChump(std::string name)
+#include "Fixed.h"
+int main( void )
 {
-    Zombie zombie(name);
-    zombie.announce();
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    // std::cout << a.getRawBits() << std::endl;
+    // std::cout << b.getRawBits() << std::endl;
+    // std::cout << c.getRawBits() << std::endl;
+    return (0);
 }

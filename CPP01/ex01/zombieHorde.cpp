@@ -6,31 +6,21 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:25:32 by jedusser          #+#    #+#             */
-/*   Updated: 2024/10/28 10:33:02 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:53:26 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* Zombie::zombieHorde(int N, std::string name)
+Zombie* zombieHorde(int N, std::string name)
 {
-    int i;
-    Zombie *horde;
+    if (N <= 0)
+        return (NULL);
     
-    horde = new Zombie[N];
-    i = 0;
-    while (i < N)
-    {
-        horde[i] =  Zombie(name);
-        i++;
-    }
-//    TEST
-    i = 0;
-    while(i < N)
-    {
-        horde[i].announce();
-        i++;
-    }
-  //  TEST
+    Zombie *horde = new Zombie[N];
+    if (!horde)
+        return (NULL);
+    for (int i = 0; i < N; i++)
+        horde[i].setName(name);
     return (horde);
 }

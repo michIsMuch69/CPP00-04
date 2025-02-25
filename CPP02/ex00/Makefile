@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/28 10:59:25 by jedusser          #+#    #+#              #
-#    Updated: 2025/02/25 13:55:50 by jedusser         ###   ########.fr        #
+#    Created: 2025/02/25 11:19:33 by jedusser          #+#    #+#              #
+#    Updated: 2025/02/25 11:20:24 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,12 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 SRC_DIR = .
 OBJ_DIR = obj
 
-NAME = hibrain
-SRCS = main.cpp
+NAME = first_canon
+
+SRCS = main.cpp \
+		Fixed.cpp
+       
+
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 
@@ -42,4 +46,4 @@ re: fclean all
 
 -include $(DEPS)
 
-.PHONY: all clean fclean re%   
+.PHONY: all clean fclean re
