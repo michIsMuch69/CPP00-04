@@ -5,10 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/25 11:19:33 by jedusser          #+#    #+#              #
-#    Updated: 2025/03/01 11:01:45 by michismuch       ###   ########.fr        #
+#    Created: 2025/03/01 11:01:06 by michismuch        #+#    #+#              #
+#    Updated: 2025/03/01 11:02:03 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
@@ -16,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 SRC_DIR = .
 OBJ_DIR = obj
 
-NAME = first_canon
+NAME = second-ex
 
 SRCS = main.cpp \
 		Fixed.cpp
