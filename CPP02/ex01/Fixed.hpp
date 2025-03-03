@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 11:00:59 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/01 13:22:48 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/01 17:30:19 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Fixed
         float toFloat( void ) const;
         int toInt( void ) const;
         Fixed & operator=(const Fixed &other);
-    };
+};
     
     std::ostream& operator<<(std::ostream &o, Fixed const &i);
     

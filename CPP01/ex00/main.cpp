@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 09:04:51 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/28 20:32:55 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 06:54:04 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 
 int main()
 {
-    std::string name;
-    std::cout << "Enter a name: ";
-    std::cin >> name;
-
-    randomChump(name);
-    Zombie* heapZombie = newZombie(name);
+    randomChump("   Francis");
+    Zombie* heapZombie = newZombie("Francis");
     heapZombie->announce();
     delete heapZombie; 
 
