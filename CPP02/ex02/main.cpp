@@ -6,12 +6,12 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:07:57 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 07:08:37 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 08:13:01 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
+//#include <iostream>
 
 int main( void )
 {

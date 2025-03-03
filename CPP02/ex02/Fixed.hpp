@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:07:54 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 07:13:10 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 08:13:30 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+
 
 class Fixed
 {

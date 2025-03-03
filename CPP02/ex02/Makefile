@@ -6,11 +6,11 @@
 #    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 07:08:00 by michismuch        #+#    #+#              #
-#    Updated: 2025/03/03 07:08:20 by michismuch       ###   ########.fr        #
+#    Updated: 2025/03/03 08:17:51 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C = c++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 
 SRC_DIR = .
