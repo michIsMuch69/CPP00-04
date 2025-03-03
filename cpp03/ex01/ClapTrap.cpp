@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:54 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 16:29:43 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 17:12:54 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,4 @@ void ClapTrap::beRepaired(int amount)
     else
         std::cout << _name << " cannot be repaired due to lack of energy or hit points!" << std::endl;
 }
+

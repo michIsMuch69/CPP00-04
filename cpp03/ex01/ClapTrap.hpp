@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:57 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 16:21:02 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 19:28:31 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,30 @@
 
 class ClapTrap
 {
-    protected:
-        std::string _name;
-        int _hitPoints;
-        int _energyPoints;
-        int _attackDamage;
-        void takeDamage(int amount);
-        void beRepaired(int amount);    
+        private:
+            std::string _name;
+            int _hitPoints;
+            int _energyPoints;
+            int _attackDamage;
         
         public:
-        ClapTrap(const std::string& name);
-        virtual ~ClapTrap();
-        virtual void attack(const std::string& target);
+            ClapTrap(const std::string& name);
+            virtual ~ClapTrap();
+            
+            virtual void attack(const std::string& target);
+            void takeDamage(int amount);
+            void beRepaired(int amount);
+            
+            std::string getName () const { return _name ; }
+
+            //getter functions
+            int getHitPoints() const { return _hitPoints ; } 
+            int  getEnergyPoints() const { return _energyPoints ; }
+            int getAttackDamage() const { return _attackDamage ; }
+            //setter functions
+            void setHitPoints(int nb) { this->_hitPoints = nb ;}
+            void setEnergyPoints(int nb) { this->_energyPoints = nb ;}
+            void setAttackDamage(int nb) { this->_attackDamage = nb ;}
     };
 
 #endif
