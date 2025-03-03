@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 10:31:00 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 16:11:20 by michismuch       ###   ########.fr       */
+/*   Created: 2025/03/03 16:59:14 by michismuch        #+#    #+#             */
+/*   Updated: 2025/03/03 17:01:08 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#ifndef FRAGTRAP_HPP
+#define FRAGRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-
-int main()
+class FragTrap : public ClapTrap
 {
-    ClapTrap clap("John ClapTrap");
+public:
+    FragTrap(const std::string& name);
+    ~FragTrap();
 
-    ScavTrap scav("Bob ScavTrap");
+    void attack(const std::string& target);
+    void highFiveGuys(void);
+};
 
-    ClapTrap* clapPtr;
-
-    clapPtr = &clap;
-    clapPtr->attack("target");
-
-    clapPtr = &scav;
-    clapPtr->attack("target");
-
-    scav.guardGate(); 
-
-    return 0;
-}
+#endif 

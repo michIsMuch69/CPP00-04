@@ -6,20 +6,20 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:54 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 12:06:46 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 15:49:05 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _name("Unnamed"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor called for " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Init constructor called for " << name << std::endl;
+    std::cout << "ClapTrap " << _name << " created with 10 hit points, 10 energy points, and 0 attack damage!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()

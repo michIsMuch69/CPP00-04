@@ -6,33 +6,29 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:31:00 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 15:49:21 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 17:02:23 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main(void)
+
+int main()
 {
-    ClapTrap ct("Joe");
+    ClapTrap clap("John ClapTrap");
 
-    std::cout << "Starting simulation for ClapTrap " << ct.getName() << "...\n" << std::endl;
+    FragTrap scav("Bob FragTrap");
 
-    while (ct.getEnergyPoints() > 0 && ct.getHitPoints() > 0)
-    {
-        ct.attack("Roger");
-        ct.takeDamage(3);
-        ct.beRepaired(5);
+    ClapTrap* clapPtr;
 
-        if (ct.getEnergyPoints() == 0)
-        {
-            std::cout << ct.getName() << " has no energy points left." << std::endl;
-            break;
-        }
-    }
+    clapPtr = &clap;
+    clapPtr->attack("target");
 
-    std::cout << "\nSimulation ended. Final state of ClapTrap " << ct.getName() << ":" << std::endl;
-    std::cout << "Hit points: " << ct.getHitPoints() << ", Energy points: " << ct.getEnergyPoints() << std::endl;
+    clapPtr = &scav;
+    clapPtr->attack("target");
+
+    scav.highFiveGuys(); 
 
     return 0;
 }

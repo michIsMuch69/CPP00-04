@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 11:54:59 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 15:42:35 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 17:02:16 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
     _hitPoints = 100;        
-    _energyPoints = 50;
-    _attackDamage = 20;
-    std::cout << "ScavTrap " << _name << " has been created!" << std::endl;
+    _energyPoints = 100;
+    _attackDamage = 30;
+    std::cout << "FragTrap " << _name << " has been created!" << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-    std::cout << "ScavTrap " << _name << " has been destroyed!" << std::endl;
+    std::cout << "FragTrap " << _name << " has been destroyed!" << std::endl;
 }
 
-void ScavTrap::attack(const std::string& target)
+void FragTrap::attack(const std::string& target)
 {
     if (_energyPoints > 0 && _hitPoints > 0)
     {
-        std::cout << "ScavTrap " << _name << " attacks " << target 
+        std::cout << "FragTrap " << _name << " attacks " << target 
                   << ", causing " << _attackDamage << " points of damage!" << std::endl;
         _energyPoints--;
         std::cout << "Energy left: " << _energyPoints << std::endl;
@@ -38,8 +38,8 @@ void ScavTrap::attack(const std::string& target)
         std::cout << _name << " has no energy or hit points to attack!" << std::endl;
 }
 
-void ScavTrap::guardGate()
+void FragTrap::highFiveGuys(void)
 {
-    std::cout << "ScavTrap " << _name << " is now in Guard Gate mode!" << std::endl;
+    std::cout << _name << " is requesting a high five!" << std::endl;
 }
 
