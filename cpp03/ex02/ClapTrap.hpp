@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:57 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 17:04:34 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 19:58:10 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 class ClapTrap
 {
-    protected:
+    private :
         std::string _name;
         int _hitPoints;
         int _energyPoints;
@@ -34,10 +34,24 @@ class ClapTrap
         void takeDamage(int amount);
         void beRepaired(int amount);    
         
-        public:
+    public:
         ClapTrap(const std::string& name);
+        ClapTrap(const ClapTrap &);
         virtual ~ClapTrap();
         virtual void attack(const std::string& target);
+
+
+        ClapTrap & operator=(const ClapTrap &other);
+
+        //getter functions
+        std::string getName () const { return _name ; }
+        int getHitPoints() const { return _hitPoints ; } 
+        int  getEnergyPoints() const { return _energyPoints ; }
+        int getAttackDamage() const { return _attackDamage ; }
+        //setter functions
+        void setHitPoints(int nb) { this->_hitPoints = nb ;}
+        void setEnergyPoints(int nb) { this->_energyPoints = nb ;}
+        void setAttackDamage(int nb) { this->_attackDamage = nb ;}
 };
 
 #endif
