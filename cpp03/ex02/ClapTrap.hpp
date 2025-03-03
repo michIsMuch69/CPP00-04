@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:57 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 16:21:02 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/03 17:04:34 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ class ClapTrap
         ClapTrap(const std::string& name);
         virtual ~ClapTrap();
         virtual void attack(const std::string& target);
-    };
+};
 
 #endif
