@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 11:54:59 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 19:31:36 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/04 11:28:52 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void ScavTrap::attack(const std::string& target)
         std::cout << "Energy left: " << getEnergyPoints() << std::endl;
     }
     else
-        std::cout <<getName() << " has no energy or hit points to attack!" << std::endl;
+        std::cout << getName() << " has no energy or hit points to attack!" << std::endl;
 }
 
 void ScavTrap::guardGate()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:54 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 19:55:31 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/04 11:34:16 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,12 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &other)
     this->_attackDamage = other._attackDamage;
 	return (*this);
 }
+
+const std::string& ClapTrap::getName () const { return (this->_name) ; }
+const int& ClapTrap::getHitPoints() const { return (this->_hitPoints) ; } 
+const int&  ClapTrap::getEnergyPoints() const { return (this->_energyPoints) ; }
+const int& ClapTrap::getAttackDamage() const { return (this->_attackDamage) ; }
+
+void ClapTrap::setHitPoints(int nb) { this->_hitPoints = nb ;}
+void ClapTrap::setEnergyPoints(int nb) { this->_energyPoints = nb ;}
+void ClapTrap::setAttackDamage(int nb) { this->_attackDamage = nb ;}

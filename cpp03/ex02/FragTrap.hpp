@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:59:14 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 20:12:58 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/04 11:33:23 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef FRAGTRAP_HPP
-#define FRAGRAP_HPP
+#define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 

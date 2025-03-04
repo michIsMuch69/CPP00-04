@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:54 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 15:49:05 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/04 11:20:54 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,17 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
 }
 
-int ClapTrap::getEnergyPoints() const
+const int& ClapTrap::getEnergyPoints() const
 {
     return _energyPoints;
 }
 
-int ClapTrap::getHitPoints() const
+const int& ClapTrap::getHitPoints() const
 {
     return _hitPoints;
 }
 
-std::string ClapTrap::getName() const
+const std::string& ClapTrap::getName() const
 {
     return _name;
 }

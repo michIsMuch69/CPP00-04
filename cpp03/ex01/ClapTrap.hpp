@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:30:57 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/03 19:28:31 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/04 11:27:16 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ class ClapTrap
             std::string getName () const { return _name ; }
 
             //getter functions
-            int getHitPoints() const { return _hitPoints ; } 
-            int  getEnergyPoints() const { return _energyPoints ; }
-            int getAttackDamage() const { return _attackDamage ; }
+            const int& getHitPoints() const;
+            const int&  getEnergyPoints() const;
+            const int& getAttackDamage() const;
             //setter functions
-            void setHitPoints(int nb) { this->_hitPoints = nb ;}
-            void setEnergyPoints(int nb) { this->_energyPoints = nb ;}
-            void setAttackDamage(int nb) { this->_attackDamage = nb ;}
+            void setHitPoints(int nb);
+            void setEnergyPoints(int nb);
+            void setAttackDamage(int nb);
     };
 
 #endif

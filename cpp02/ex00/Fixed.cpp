@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:19:25 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/01 11:14:45 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/04 11:18:55 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void Fixed::setRawBits(int const raw)
     this->_number = raw;
 }
 
-int Fixed::getRawBits() const
+const int& Fixed::getRawBits() const
 {
     std::cout << "getRawBits member function called" << std::endl;
     return (this->_number);
