@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 09:17:31 by jedusser          #+#    #+#             */
-/*   Updated: 2025/02/24 12:32:14 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:08:10 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ static void replace_line_occurences(std::string &string, const std::string &to_r
     
     while (true)
     {
-        std::cout << "pos=[" << pos << "]" << std::endl;
-        std::cout << "start=[" << start << "]" << std::endl;
-        std::cout << "end=[" << end << "]" << std::endl;
         start = string.find(to_replace, pos);
         if (start == string.npos || pos == string.npos)
             break;
@@ -33,7 +30,6 @@ static void replace_line_occurences(std::string &string, const std::string &to_r
         string.insert(start, new_string);
         if (end < string.length())
             pos = start + new_string.length();
-;
     }
 }
 
@@ -43,11 +39,8 @@ static std::string parse_file_name(std::string string)
     
     pos = string.find(".");
     if (pos != string.npos)
-    {
         string.erase(pos, string.npos);
-        string.append(".replace");
-        return (string);
-    }
+    string.append(".replace");
     return (string);
 }
 
