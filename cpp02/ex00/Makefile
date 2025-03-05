@@ -6,7 +6,7 @@
 #    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/25 11:19:33 by jedusser          #+#    #+#              #
-#    Updated: 2025/03/01 11:01:45 by michismuch       ###   ########.fr        #
+#    Updated: 2025/03/05 20:14:00 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 	@echo "Building $(NAME)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile
 	@echo "Compiling $< to $@"
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@

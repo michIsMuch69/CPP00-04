@@ -1,0 +1,43 @@
+une parenthese : juste une question, en quoi virtual est utile, pourquoi ne pas implementer la fonction dans la classe heritante seulement et pas ans la classe parente ?
+cela eviterait d'avori a utiliser cette syntaxe,et chaque sous-objet aura sa prore fonction
+
+La fonction virtuelle est essentielle pour permettre le polymorphisme. 
+En déclarant une fonction virtuelle dans la classe parente, vous définissez une interface commune à toutes les classes dérivées. 
+Cela permet de :
+
+Utiliser une liaison dynamique : Lorsque vous appelez cette fonction via un pointeur ou une référence de type base, 
+c'est la version de la classe dérivée (l'objet réel) qui sera appelée à l'exécution, et non celle de la classe parente.
+
+Garantir une cohérence de l'interface : La classe parente peut définir un comportement par défaut ou une interface abstraite (en la déclarant pure virtuelle) que toutes les classes dérivées doivent implémenter.
+Sans déclarer la fonction dans la classe parente, vous ne pourriez pas garantir cet accès uniforme via un pointeur ou une référence à la classe de base.
+Si vous implémentiez la fonction uniquement dans les classes dérivées, vous perdriez la possibilité d'utiliser une interface commune pour manipuler des objets de types différents.
+Vous seriez alors obligé de connaître le type exact de l'objet pour appeler la bonne méthode, ce qui va à l'encontre de l'idée même du polymorphisme.
+
+En résumé, le mot-clé virtual permet à la classe parente de servir d'interface générique tout en assurant que chaque sous-objet utilise sa propre implémentation spécifique
+même lorsque l'on manipule ces objets via des pointeurs ou des références de la classe de base.
+
+Utilité du mot-clé "virtual" en C++ et Polymorphisme
+====================================================
+
+En C++, le mot-clé "virtual" est essentiel pour permettre le polymorphisme. Il est déclaré dans la classe parente pour créer une interface commune que toutes les classes dérivées peuvent (ou doivent) implémenter.
+
+1. Liaison dynamique (Dynamic Binding)
+----------------------------------------
+- Lorsqu'une fonction est déclarée comme virtuelle dans la classe parente, l'appel à cette fonction via un pointeur ou une référence de type base résout dynamiquement la méthode correspondant à l'objet réel.
+- Cela signifie que, même si le pointeur est de type base, la version de la fonction définie dans la classe dérivée sera exécutée, et non celle de la classe parente.
+
+2. Interface commune et cohérence
+----------------------------------
+- Déclarer la fonction virtuelle dans la classe parente permet de garantir que toutes les classes dérivées respectent la même interface. Cela assure une uniformité lors de la manipulation des objets polymorphiques.
+- Vous pouvez fournir un comportement par défaut dans la classe parente, ou la déclarer pure virtuelle (abstraite) pour forcer les classes dérivées à fournir leur propre implémentation.
+
+3. Avantage par rapport à une implémentation uniquement dans la classe dérivante
+--------------------------------------------------------------------------------
+- Sans la déclaration virtuelle dans la classe parente, il n'existerait pas d'interface commune accessible via des pointeurs ou des références à la classe de base.
+- Si chaque classe dérivée implémente uniquement sa propre version sans déclaration dans la classe parente, le compilateur ne peut pas effectuer la liaison dynamique. Il serait alors nécessaire de connaître le type exact de l'objet pour appeler la bonne méthode, ce qui va à l'encontre des principes du polymorphisme.
+
+En résumé, le mot-clé "virtual" permet :
+- D'assurer que le bon comportement (celui de la classe dérivée) est exécuté lors d'un appel à une méthode à travers un pointeur ou une référence de la classe de base.
+- De maintenir une interface commune et cohérente entre la classe parente et ses classes dérivées, tout en permettant des implémentations spécifiques pour chaque type d'objet.
+
+Cet usage favorise la flexibilité et la maintenabilité du code, en respectant les principes de la programmation orientée objet.

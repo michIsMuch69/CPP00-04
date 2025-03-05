@@ -5,11 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/01 11:01:06 by michismuch        #+#    #+#              #
-#    Updated: 2025/03/05 20:14:06 by michismuch       ###   ########.fr        #
+#    Created: 2025/03/05 20:13:17 by michismuch        #+#    #+#              #
+#    Updated: 2025/03/05 20:41:36 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
@@ -17,10 +16,14 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 SRC_DIR = .
 OBJ_DIR = obj
 
-NAME = second-ex
+NAME = polymorphism
 
 SRCS = main.cpp \
-		Fixed.cpp
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp
        
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

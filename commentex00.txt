@@ -1,0 +1,41 @@
+Polymorphism and Virtual Functions Lesson
+===========================================
+
+1. Polymorphism by Subtyping
+-----------------------------
+Polymorphism allows you to use a base class pointer (or reference) to refer to objects of derived classes.
+- In our implementation, the base class "Animal" declares a virtual method "makeSound()".
+- The derived classes "Dog" and "Cat" override this method to output their specific sounds.
+- When "makeSound()" is called through an "Animal*" pointer, the program dynamically binds the call to the correct overridden method, based on the actual object type.
+
+2. Virtual Functions and Dynamic Binding
+------------------------------------------
+- **Virtual Functions:**  
+  Declaring a member function as "virtual" in the base class signals that derived classes may override this function. In our case, "Animal::makeSound()" is virtual.
+  
+- **Dynamic Binding:**  
+  When you invoke a virtual function via a pointer or reference, the call is resolved at runtime based on the actual object's type. For example, if an "Animal*" pointer points to a "Dog" object, calling "makeSound()" will execute "Dog::makeSound()".
+
+3. The Role of Virtual Destructors
+------------------------------------
+- In polymorphic usage, it is crucial to declare the base class destructor as virtual.
+- This ensures that when a derived class object is deleted through a base class pointer, the correct destructor sequence is called.
+- In our solution, "Animal::~Animal()" is virtual, guaranteeing proper cleanup for "Dog" and "Cat" objects.
+
+4. The “Wrong” Classes: WrongAnimal and WrongCat
+-------------------------------------------------
+- **WrongAnimal** and **WrongCat** are implemented to show the pitfalls when virtual functions are not used.
+- "WrongAnimal" does not declare "makeSound()" as virtual. Therefore, even if "WrongCat" provides its own version of "makeSound()", calling it through a "WrongAnimal*" pointer will always invoke the base class method.
+- This illustrates the importance of the "virtual" keyword for achieving the intended polymorphic behavior.
+
+5. Testing and Debugging
+--------------------------
+- Each constructor and destructor in our classes prints a unique message. This helps verify the creation and destruction order of objects.
+- The printed messages also confirm that the copy constructors and assignment operators work correctly.
+- The test cases in "main.cpp" demonstrate both correct polymorphic behavior (with virtual functions) and the issues when virtual functions are omitted.
+
+Summary:
+--------
+This lesson builds on basic inheritance by introducing polymorphism and virtual functions. These concepts allow for more flexible and dynamic code, where base class pointers can manage derived class objects seamlessly. Understanding these principles is fundamental for advanced object‑oriented programming, ensuring correct object behavior and resource management.
+
+Happy Coding!
