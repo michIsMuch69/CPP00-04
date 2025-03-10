@@ -1,0 +1,24 @@
+Classe abstraite et instanciation
+==================================
+
+Dans cet exercice, nous avons modifié la classe de base pour qu'elle soit abstraite, afin d'éviter son instanciation directe. Voici les principaux changements :
+
+1. Déclaration d'une méthode pure virtuelle
+---------------------------------------------
+- Dans la classe Animal, la méthode makeSound() est déclarée comme pure virtuelle :
+  virtual void makeSound() const = 0;
+  
+  Cela signifie que Animal ne peut pas être instanciée directement, car il manque une implémentation de cette méthode.
+  
+2. Constructeur protégé
+------------------------
+- Le constructeur de Animal a été rendu protégé. Cela empêche la création d'objets de type Animal depuis l'extérieur, même si, en théorie, une classe abstraite ne peut déjà pas être instanciée.
+  
+3. Héritage et polymorphisme
+-----------------------------
+- Les classes dérivées (Dog et Cat) héritent de Animal et implémentent la méthode makeSound(). 
+- Grâce au polymorphisme, on peut manipuler des pointeurs de type Animal* qui pointent vers des objets Dog ou Cat, et l'appel de makeSound() exécutera la version spécifique à la classe dérivée.
+
+Ces modifications garantissent que seuls des objets ayant un comportement défini (comme Dog ou Cat) peuvent être créés, évitant ainsi des erreurs potentielles liées à l'instanciation d'un Animal générique qui ne ferait aucun bruit.
+
+En résumé, l'utilisation d'une classe abstraite renforce la conception orientée objet en imposant aux classes dérivées de fournir des implémentations spécifiques pour les comportements essentiels.
