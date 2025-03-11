@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:54:09 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/10 16:30:34 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/11 11:49:05 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 #include <iostream>
 
 int main()
-{
-    std::cout << "Exercice 01 - Animal concret" << std::endl;
-    
+{    
     Animal* generic = new Animal();
     std::cout << "Generic Animal (" << generic->getType() << ") sound: ";
     generic->makeSound();
