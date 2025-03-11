@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 20:21:38 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/05 20:22:22 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/11 11:51:03 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main()
     const WrongAnimal* wrongCat = new WrongCat();
 
     std::cout << wrongCat->getType() << std::endl;
-    // Because makeSound is not virtual, the call resolves to WrongAnimal::makeSound()
     wrongCat->makeSound();  
     wrongMeta->makeSound();
 
